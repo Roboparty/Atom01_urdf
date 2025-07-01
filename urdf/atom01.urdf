@@ -1188,7 +1188,7 @@
     <child
       link="right_arm_yaw_link" />
     <axis
-      xyz="0 0 -1" />
+      xyz="0 0 1" />
     <limit
       lower="-2.6"
       upper="2.6"
