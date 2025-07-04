@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <robot
   name="atom01urdf">
-  <mujoco>
-    <compiler meshdir="../meshes" discardvisual="false"/>
-  </mujoco>
-
-  <!-- [CAUTION] uncomment when convert to mujoco -->
-  <link name="world"></link>
-  <joint name="floating_base_joint" type="floating">
-    <parent link="world"/>
-    <child link="base_link"/>
-  </joint>
-
   <link
     name="base_link">
     <inertial>
@@ -81,6 +70,15 @@
           rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
       </material>
     </visual>
+    <!-- <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/left_thigh_yaw_link.STL" />
+      </geometry>
+    </collision> -->
   </link>
   <joint
     name="left_thigh_yaw_joint"
@@ -93,10 +91,10 @@
     <child
       link="left_thigh_yaw_link" />
     <axis
-      xyz="0.5 0 0.86603" />    
+      xyz="-0.5 0 -0.86603" />    
     <limit
-      lower="-0.2"
-      upper="1"
+      lower="-1"
+      upper="0.2"
       effort="80"
       velocity="10.47" />
   </joint>
@@ -130,6 +128,15 @@
           rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
       </material>
     </visual>
+    <!-- <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/left_thigh_roll_link.STL" />
+      </geometry>
+    </collision> -->
   </link>
   <joint
     name="left_thigh_roll_joint"
@@ -293,6 +300,15 @@
           rgba="1 1 1 1" />
       </material>
     </visual>
+    <!-- <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/left_ankle_pitch_link.STL" />
+      </geometry>
+    </collision> -->
   </link>
   <joint
     name="left_ankle_pitch_joint"
@@ -365,8 +381,8 @@
     <axis
       xyz="1 0 0" />
     <limit
-      lower="-0.18"
-      upper="0.18"
+      lower="-0.5"
+      upper="0.5"
       effort="18"
       velocity="3.7692" />
   </joint>
@@ -400,6 +416,15 @@
           rgba="0.89804 0.91765 0.92941 1" />
       </material>
     </visual>
+    <!-- <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/right_thigh_yaw_link.STL" />
+      </geometry>
+    </collision> -->
   </link>
   <joint
     name="right_thigh_yaw_joint"
@@ -412,10 +437,10 @@
     <child
       link="right_thigh_yaw_link" />
     <axis
-      xyz="0.5 0 0.86603" />
+      xyz="-0.5 0 -0.86603" />
     <limit
-      lower="-1"
-      upper="0.2"
+      lower="-0.2"
+      upper="1"
       effort="80"
       velocity="10.47" />
   </joint>
@@ -449,6 +474,14 @@
           rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
       </material>
     </visual>
+    <!-- <collision>
+      <origin
+        xyz="0.05 0 -0.1"
+        rpy="0 0 0" />
+      <geometry>
+        <box name="baselink" size="0.08 0.1 0.22"/>
+      </geometry>
+    </collision> -->
   </link>
   <joint
     name="right_thigh_roll_joint"
@@ -556,6 +589,14 @@
           rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
       </material>
     </visual>
+    <!-- <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.57 0 0" />
+      <geometry>
+        <cylinder name="left_knee_link" length="0.1" radius="0.045"/>
+      </geometry>
+    </collision> -->
     <collision>
       <origin
         xyz="0.0 0 -0.15"
@@ -613,6 +654,15 @@
           rgba="1 1 1 1" />
       </material>
     </visual>
+    <!-- <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/right_ankle_pitch_link.STL" />
+      </geometry>
+    </collision> -->
   </link>
   <joint
     name="right_ankle_pitch_joint"
@@ -685,8 +735,8 @@
     <axis
       xyz="1 0 0" />
     <limit
-      lower="-0.18"
-      upper="0.18"
+      lower="-0.5"
+      upper="0.5"
       effort="18"
       velocity="3.7692" />
   </joint>
@@ -1005,6 +1055,15 @@
           rgba="1 1 1 1" />
       </material>
     </visual>
+    <!-- <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/left_elbow_yaw_link.STL" />
+      </geometry>
+    </collision> -->
   </link>
   <joint
     name="left_elbow_yaw_joint"
@@ -1017,7 +1076,7 @@
     <child
       link="left_elbow_yaw_link" />
     <axis
-      xyz="1 0 0" />
+      xyz="-1 0 0" />
     <limit
       lower="-1.57"
       upper="1.57"
@@ -1247,7 +1306,7 @@
     <axis
       xyz="0 1 0" />
     <limit
-      lower="-1.5"
+      lower="-1.0"
       upper="1.57"
       effort="18"
       velocity="3.7692" />
@@ -1282,7 +1341,16 @@
           rgba="1 1 1 1" />
       </material>
     </visual>
-    </link>
+    <!-- <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/right_elbow_yaw_link.STL" />
+      </geometry>
+    </collision> -->
+  </link>
   <joint
     name="right_elbow_yaw_joint"
     type="revolute">
@@ -1294,7 +1362,7 @@
     <child
       link="right_elbow_yaw_link" />
     <axis
-      xyz="1 0 0" />
+      xyz="-1 0 0" />
     <limit
       lower="-1.57"
       upper="1.57"
